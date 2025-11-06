@@ -27,7 +27,8 @@ enum ScratchcardState: Equatable {
 class ScratchcardService: ObservableObject {
     @Published var cardState: ScratchcardState = .unscratched
 
-    private let networking: ScratchcardNetworkingService = .init()
+    var networking: ScratchcardNetworkingService = .init()
+
     static let shared = ScratchcardService()
 
     enum ActivationError: LocalizedError {
